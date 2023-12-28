@@ -21,8 +21,6 @@ jobs:
         with:
           node-version: 16.x
           cache: "npm"
-          registry-url: 'https://npm.pkg.github.com/riverajefer'
-
       - run: npm install
       - run: npm pack
       - run: |
