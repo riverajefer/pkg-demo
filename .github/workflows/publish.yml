@@ -22,11 +22,8 @@ jobs:
           node-version: 16.x
           cache: "npm"
           registry-url: 'https://registry.npmjs.org'
-          
 
-      - run: npm install --frozen-lockfile
-      - run: npm ci
-      - run: npm publish --access public 
+      - run: npm publish
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
