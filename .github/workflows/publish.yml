@@ -25,7 +25,7 @@ jobs:
 
       - run: npm install
       - run: npm pack
-      - run: npm publish "math-jeff2-*.tgz"
+      - run: npm publish "math-jeff2-$(ls math-jeff2-*.tgz)"
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
