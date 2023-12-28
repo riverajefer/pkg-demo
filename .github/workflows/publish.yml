@@ -25,7 +25,10 @@ jobs:
 
       - run: npm install
       - run: npm pack
-      - run: npm publish "math-jeff2-$(ls math-jeff2-*.tgz)"
+      - run: |
+          # Explicitly set the tarball filename based on your package name and version
+          tarball=$(npm pack | tail -n 1)
+          npm publish "$tarball"
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
